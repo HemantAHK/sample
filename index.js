@@ -1,6 +1,8 @@
+import { Platform } from "react-native";
 
-import { NativeModules } from 'react-native';
+import SampleIos from "./index.ios.js";
+import SampleAndroid from "./index.android.js";
 
-const { RNSample } = NativeModules;
+const Sample = Platform.OS === "ios" ? SampleIos : SampleAndroid
 
-export default RNSample;
+export default Sample;
